@@ -29,4 +29,4 @@
 // Retrocompatibility with 1.4
 $_REQUEST['ajaxMode'] = $_POST['ajaxMode'] = $_GET['ajaxMode'] = $_REQUEST['ajax'] = $_POST['ajax'] = $_GET['ajax'] = 1;
 
-require_once dirname(__FILE__).'/index.php';
+require_once __DIR__ .'/index.php';

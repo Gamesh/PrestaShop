@@ -36,7 +36,7 @@ use ToolsCore as Tools;
 
 @trigger_error('Using '.__FILE__.' to make an ajax call is deprecated since 1.7.6.0 and will be removed in the next major version. Use a controller instead.', E_USER_DEPRECATED);
 
-require_once dirname(__FILE__) . '/../classes/Tools.php';
+require_once __DIR__ . '/../classes/Tools.php';
 
 /**
  * Ajax calls to the controller AdminReferrers

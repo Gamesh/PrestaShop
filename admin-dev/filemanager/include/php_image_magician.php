@@ -253,8 +253,8 @@ class imageLib
 
   private function initialise()
   {
-      $this->psdReaderPath = dirname(__FILE__) . '/classPhpPsdReader.php';
-      $this->filterOverlayPath = dirname(__FILE__) . '/filters';
+      $this->psdReaderPath = __DIR__ . '/classPhpPsdReader.php';
+      $this->filterOverlayPath = __DIR__ . '/filters';
 
     // *** Set if image should be interlaced or not.
     $this->isInterlace = false;
@@ -480,7 +480,7 @@ class imageLib
         $pos = str_replace(' ', '', $pos);
 
         $xyArray = explode('x', $pos);
-        list($cropStartX, $cropStartY) = $xyArray;
+        [$cropStartX, $cropStartY] = $xyArray;
     } else {
         switch ($pos) {
         case 'tl':
@@ -1165,7 +1165,7 @@ class imageLib
       $numColors = imagecolorstotal($this->imageResized);
 
       for ($x = 0; $x < $numColors; $x++) {
-          list($r, $g, $b) = array_values(imagecolorsforindex($this->imageResized, $x));
+          [$r, $g, $b] = array_values(imagecolorsforindex($this->imageResized, $x));
 
     // calculate grayscale in percent
     $grayscale = ($r + $g + $b) / 3 / 0xff;
@@ -2180,7 +2180,7 @@ class imageLib
   private function getTextFont($font)
   {
       // *** Font path (shou
-    $fontPath =  dirname(__FILE__) . '/' . $this->fontDir;
+    $fontPath =  __DIR__ . '/' . $this->fontDir;
 
     // *** The below is/may be needed depending on your version (see ref)
     putenv('GDFONTPATH=' . realpath('.'));
@@ -2307,7 +2307,7 @@ class imageLib
         $pos = str_replace(' ', '', $pos);
 
         $xyArray = explode('x', $pos);
-        list($width, $height) = $xyArray;
+        [$width, $height] = $xyArray;
     } else {
         switch ($pos) {
         case 'tl':

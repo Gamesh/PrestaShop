@@ -29,4 +29,4 @@ $_GET['ajax'] = 1;
 $_GET['controller'] = 'AdminStats';
 $_GET['action'] = 'graphGrid';
 
-require_once dirname(__FILE__).'/index.php';
+require_once __DIR__ .'/index.php';
